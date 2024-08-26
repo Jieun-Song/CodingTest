@@ -1,0 +1,1 @@
+{"name":"Local: 1308","url":"/Users/jieunsong/Desktop/git/CodingTest/silver/1308.py","tests":[{"id":1724640809587,"input":"2008 12 27\n2009 1 22","output":"D-26"},{"id":1724649538617,"input":"2024 8 26\n3024 8 26","output":"gg"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/jieunsong/Desktop/git/CodingTest/silver/1308.py","group":"local","local":true}
