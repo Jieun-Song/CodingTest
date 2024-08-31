@@ -1,4 +1,4 @@
-# 올해가 몊프로남았는지 출력
+# 올해가 몇프로남았는지 출력
 
 # 절대/상대 오차는 1분의 10의 9제곱승까지 허용한다.
 
@@ -16,10 +16,28 @@ def monthToNum(key):
             "November" : 11, "December" : 12}.get(key)
   return monthNum;
 
-month, day, year, hour = input().split(", ").split()
+# 차라리 달 -> 일/ 일 -> 분으로 바꾸는 함수를 각각 만드는건 어떨까?
+
+def monthToDay(dates, month):
+  result = 0
+  for i in range(month-1):
+    result += dates[i]
+  return result
+
+def dayToMin(date):
+  return date * 24 * 60
+
+def hoursToMin(hours):
+  hour, min = map(int, hours.split(":"))
+  return (hour * 60 + min)
+
+front, back = input().split(", ")
+month, day = front.split()
+year, hour = back.split()
 month = monthToNum(month)
 
 dates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+oneYear = 365
 
 if int(year) % 4 == 0 :
   # 윤년
@@ -27,13 +45,14 @@ if int(year) % 4 == 0 :
   oneYear = 366
 
 # 달 -> 일
-result = 0
-for i in range(month-1):
-  result += dates[i]
+days = monthToDay(dates, month) + int(day)
+mins = dayToMin(days) + hoursToMin(hour)
 
+print(mins*100/dayToMin(oneYear))
+
+
+
+
+#해야하는것
 # 00:00으로 되어있는 형태를 분으로 바꾸어야한다,,,,,,,,
-datetime.datetime.strptime(hour,'')
-print(((result+int(day))*24*60+int(hour)*60+int())/oneYear*24*60)
-
-
-# 차라리 달 -> 일/ 일-> 시간/ 시간 -> 분으로 바꾸는 함수를 각각 만드는건 어떨까?
+# 앞에 것들을 분으로 바꾸는 건 됨
