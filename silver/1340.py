@@ -1,4 +1,4 @@
-# 올해가 몇프로남았는지 출력
+# 올해가 몇프로지났는지 출력
 
 # 절대/상대 오차는 1분의 10의 9제곱승까지 허용한다.
 
@@ -39,20 +39,19 @@ month = monthToNum(month)
 dates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 oneYear = 365
 
-if int(year) % 4 == 0 :
+if int(year) % 4 == 0 and (int(year) % 100 != 0 or int(year) % 400 == 0):
   # 윤년
   dates[1] = 29
   oneYear = 366
-
+  
 # 달 -> 일
-days = monthToDay(dates, month) + int(day)
+days = monthToDay(dates, month) + (int(day)-1)
 mins = dayToMin(days) + hoursToMin(hour)
 
-print(mins*100/dayToMin(oneYear))
+print(mins/dayToMin(oneYear)*100)
 
 
 
 
 #해야하는것
-# 00:00으로 되어있는 형태를 분으로 바꾸어야한다,,,,,,,,
-# 앞에 것들을 분으로 바꾸는 건 됨
+# 오ㅐ 안맞지?
