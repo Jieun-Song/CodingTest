@@ -1,0 +1,1 @@
+{"name":"Local: 25325","url":"/Users/jieunsong/Desktop/git/CodingTest/silver/25325.py","tests":[{"id":1736845433971,"input":"4\naaa bbb ccc ddd\nbbb ddd\naaa ddd\naaa\naaa bbb","output":"aaa 3\nbbb 2\nddd 2\nccc 0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/jieunsong/Desktop/git/CodingTest/silver/25325.py","group":"local","local":true}
